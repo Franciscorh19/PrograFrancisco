@@ -11,7 +11,7 @@ public class EjercicioMultiArray01 {
 		for(int i=0 ; i <darray.length; i++) {
 			for(int j=0 ; j < darray[i].length; j++) {
 		
-		System.out.println("Ingrese un valor: ");
+		System.out.println("Ingrese un valor ");
 		darray[i][j] = sc.nextInt();
 			}		
 		}
