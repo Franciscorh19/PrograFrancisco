@@ -1,0 +1,89 @@
+package Bicicleta;
+
+import java.util.Scanner;
+
+public class Estudiante {
+	
+	private String nombre;
+	private int edad;
+	private double calificacion;	
+	
+	
+	public Estudiante() {
+		// TODO Auto-generated constructor stub
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Ingrese el nombre del alumno.");
+		nombre = sc.nextLine();
+		
+		System.out.println("Ingrese la edad del alumno.");
+		edad = sc.nextInt();
+		
+		System.out.println("Ingrese la calificacion del alumno.");
+		calificacion = sc.nextDouble();
+		
+		sc.close();
+	}
+
+	public String getNombre() {
+		return nombre;		
+	}
+	public int getEdad() {
+		if(edad<=0) {
+		System.out.println("Error.");
+		}else {
+		
+		}
+		return edad;
+	}
+	public double getCalificacion() {
+		return calificacion;		
+	}
+
+	
+	public void  setNombre(String nombre) {
+		this.nombre=nombre;		
+	}
+	public void  setEdad(int edad) {
+		this.edad=edad;		
+	}
+	public  void  setCalificacion(double calificacion) {
+		this.calificacion=calificacion;		
+	} 
+
+		
+	public void imprimir() {
+		System.out.println("Nombre:"+nombre);
+		if(edad<=0) {
+		
+			System.out.println("Edad: Error");
+		}else {
+        System.out.println("Edad:"+edad);
+		}
+		if(calificacion<0 || calificacion>100){
+			System.out.println("Calificacion: La calificacion debe estar entre [0-100].");
+		}else {
+        System.out.println("Calificacion:"+calificacion);
+		}
+		
+	}
+	
+}
+
+
+package Bicicleta;
+
+public class Use_Estudiante {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Estudiante alumno = new Estudiante();
+		
+	alumno.imprimir();
+		
+		
+	
+	}	
+
+}
