@@ -1,0 +1,50 @@
+package POO1;
+
+public class Cuenta {
+
+	private String titular;
+	private double numeroCuenta;
+	private double saldo;
+	
+	public Cuenta() {
+	
+		saldo=200;
+	}
+	
+	public Cuenta(String titular, double numeroCuenta,double saldo) {                         
+	        this.titular = titular;
+	        this.numeroCuenta = numeroCuenta;
+	        
+	}
+	
+	public Cuenta(final Cuenta c) {
+		titular = c.titular;
+        numeroCuenta = c.numeroCuenta;
+        
+	}
+	//getters 
+	
+	public String getTitular() {
+		return titular;
+	}
+	public double getNumeroCuenta() {
+		return numeroCuenta;
+	}
+	public double getSaldo() {
+		return saldo;
+	}
+	
+	//Setters
+	public void set_Titular(String s) {
+			titular=s;
+	}
+	public void set_NumeroCuenta(double numero) {
+			numeroCuenta=numero;
+	}		
+	public String set_Saldo() {
+			return "Saldo actual: " + saldo;
+	}
+	
+	
+		
+	}
