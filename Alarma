@@ -1,0 +1,64 @@
+import java.util.Calendar;
+
+public class RelojAlarma {
+
+	private int HoraAlarma;
+	private int HoraActual;
+	private boolean AlarmaActivada;
+
+	public RelojAlarma() {
+		// CONSTRUCTOR
+
+		this.HoraAlarma = 10;
+		this.HoraActual = 5;
+		this.AlarmaActivada = true;
+	}
+
+//SETTER  GETTER
+	public void EstablecerHoraAlarma(int hora) {
+		this.HoraAlarma = hora;
+	}
+
+	public void activarAlarma() {
+		this.AlarmaActivada = true;
+	}
+
+	public void desactivarAlarma() {
+		this.AlarmaActivada = false;
+	}
+
+	public void activarHoraActual() {
+
+		Calendar calendar = Calendar.getInstance();
+		this.HoraActual = calendar.get(Calendar.HOUR_OF_DAY);
+	}
+
+	public void comprobarAlarma() {
+        if (AlarmaActivada && HoraActual == HoraAlarma) {
+            System.out.println("Alarma sonando");
+        } else {
+            System.out.println("");
+        }
+    }
+
+}
+
+public class Uso_Alarma {
+
+	public static void main(String[] args) {
+	     RelojAlarma Alarma = new RelojAlarma();
+
+	        // Alarma a las 10:00 AM
+	        Alarma.EstablecerHoraAlarma(8);
+
+	        // Activar la alarma
+	        Alarma.activarAlarma();
+
+	        // Actualizar la hora actual (simulado)
+	        Alarma.activarHoraActual();
+
+	        // Comprobar si la alarma suena
+	        Alarma.comprobarAlarma();
+	}
+
+}
