@@ -1,0 +1,151 @@
+public class Producto {
+	
+	//Para obtener id's únicos, de 100 en adelante
+	private static int nuevoID = 100; 
+	
+	private int id;
+	private String nombre;
+    private double precio;
+    private int stock;
+    
+    public Producto(){
+          
+    }
+    
+    public Producto(String nombre, double precio, int stock){
+    	asignaID();
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+    
+  //Se asigna nuevoID actual y se incrementa para que proximo producto su ID sea distinto
+    public void asignaID() {
+		id = nuevoID++; 		
+		
+	}
+
+	public int getId() {
+		return id;
+	}
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    @Override
+	public String toString() {
+		return String.format("Id: %d\tnombre: %s\tPrecio: %.2f €\nStock: %s", id, nombre,precio,
+				stock);
+	}
+	
+  //Dos productos son iguales sin tiene el mismo ID
+	@Override
+	public boolean equals(Object objeto) {
+		if (objeto instanceof Producto) {
+			Producto otroProducto = (Producto) objeto;
+			return id == otroProducto.id; 
+	
+		}
+		else
+			return false;
+	}
+    
+    
+}
+
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Use_Producto {
+	
+	private static ArrayList<Producto> productos = new ArrayList<Producto>();
+	private static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		
+		int opcion = 0;
+		do {
+			System.out.println("\n\t\tMENU TIENDA");
+			System.out.println("\t\t---- ------\n");
+			System.out.println("[1] -- Registrar Producto");
+			System.out.println("[2] -- Imprimir Lista Productos");
+			System.out.println("[3] -- SALIR");
+			System.out.print("Opcion: ");
+			opcion = Integer.parseInt(sc.nextLine());
+			
+			switch(opcion) {
+			case 1:
+				registrar();
+				break;
+			case 2:
+				imprimir();
+				break;
+			case 3:
+				System.out.println("\n\t\tFIN DE PROGRAMA");
+				break;
+			default:
+				System.out.println("\nOpcion equivocada");
+			}
+		} while (opcion != 3);
+
+	}
+	
+	private static void registrar() {
+		System.out.println("\nNUEVO PRODUCTO");
+		System.out.print("Nombre: ");
+		String nombre = sc.nextLine();
+		System.out.print("Precio(€): ");
+		double precio = Double.parseDouble(sc.nextLine());
+		int stock;
+		do {
+		System.out.print("Stock: ");
+		stock = Integer.parseInt(sc.nextLine());
+		
+		if(stock<0) {
+		System.out.println("Debe ser un numero positivo.");	
+		}else {
+			
+			//Ya tenemos producto con un ID único
+			Producto nuevo = new Producto(nombre, precio, stock);
+			productos.add(nuevo);
+			System.out.println("\nNuevo Producto registrado...");
+		}
+		
+		}while(stock<0);
+	}
+	
+	private static void imprimir() {
+		System.out.println("\nPRODUCTOS REGISTRADOS");
+		if (productos.isEmpty())
+			System.out.println("No hay Productos registrados.");
+		else
+			for (Producto prd: productos) {
+				System.out.println("\n*********************************");
+				System.out.println(prd);
+				System.out.println("*********************************\n");
+			}
+	}
+
+}
