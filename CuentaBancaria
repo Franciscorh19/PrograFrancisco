@@ -45,6 +45,36 @@ public class Cuenta {
 			return "Saldo actual: " + saldo;
 	}
 	
-	
 		
 	}
+import java.util.Scanner;
+
+public class Uso_Cuenta {
+	public static void main(String[] args) {
+		String titular; 
+		double numero;
+		
+//se crea objeto cuenta1 sin parametros
+//se ejecuta el constructor por defecto
+	
+		Cuenta cuenta = new Cuenta();
+		
+		Scanner sc = new Scanner(System.in);
+		
+System.out.print("Nombre de titular : ");
+titular=sc.nextLine();
+System.out.print("Número de cuenta : ");
+numero = sc.nextDouble();	
+
+sc.close();
+
+cuenta.set_Titular(titular);
+cuenta.set_NumeroCuenta(numero);
+
+System.out.println("Datos de la cuenta:");
+System.out.print(cuenta.getTitular());
+System.out.println(" con cuenta " + cuenta.getNumeroCuenta()+" tiene:");
+System.out.println(cuenta.getSaldo());
+System.out.println();
+	}
+}
