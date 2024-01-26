@@ -1,0 +1,40 @@
+public class Contactos {
+	
+	private String nombre;
+	private double telefono;
+	private String email;
+
+
+
+public Contactos () {	
+	
+}
+public Contactos (String nombre,double telefono,String email) {
+	this.nombre=nombre;
+	this.telefono=telefono;
+	this.email=email;
+	
+}
+
+public void setNombre(String nombre) {
+	this.nombre=nombre;
+}
+public void setTelefono(double telefono) {
+	this.telefono=telefono;
+}
+public void setEmail(String email) {
+	this.email=email;
+}
+
+public String getNombre() {
+	return nombre;
+}
+public double getTelefono() {
+	return telefono;
+}
+public String getEmail() {
+	return email;
+}
+}
+
+
