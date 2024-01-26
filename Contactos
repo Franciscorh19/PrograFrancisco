@@ -37,4 +37,74 @@ public String getEmail() {
 }
 }
 
+import java.util.ArrayList;
 
+import javax.swing.*;
+
+public class Uso_Contactos {
+
+	private static ArrayList<Contactos> agenda = new ArrayList<Contactos>();
+	
+	public static void main(String[] args) {
+		
+		int opcion;
+		do {
+			String opciones= JOptionPane.showInputDialog(null,"\n\t                   MENU AGENDA" +
+		    "\n\t                  ----------------------\n" +
+			"\n1)  Registrar contcto"+
+			"\n2)  Mostar lista de contactos"+
+			"\n3)  Buscar contacto"+
+			"\n4)  Salir"+
+			"\n\nOpcion: ");
+							
+			opcion = Integer.parseInt(opciones);
+			
+			switch(opcion) {
+			case 1:
+				registrar();
+				break;
+			case 2:
+				mostrar();
+				break;
+			case 3:
+				buscar();
+				break;
+			case 4:
+				JOptionPane.showMessageDialog(null,"\n\t\t      FIN DE PROGRAMA.");
+				break;
+			default:
+				JOptionPane.showMessageDialog(null,"\nOpcion equivocada.");
+			}				
+			
+		} while (opcion != 4);			
+}
+	private static void registrar() {
+		String nombre = JOptionPane.showInputDialog(null,"\nNUEVO CONTACTO" + "\nNombre: ");
+	    String telefonoS = JOptionPane.showInputDialog(null,"Telefono: ");
+		double telefono = Double.parseDouble(telefonoS);
+		String email = JOptionPane.showInputDialog(null,"E-mail: ");
+		Contactos nuevo = new Contactos(nombre, telefono, email);
+		agenda.add(nuevo);						
+		 JOptionPane.showMessageDialog(null,"Nuevo Producto registrado...");											 
+				
+	}
+	
+	private static void mostrar() {
+		JOptionPane.showMessageDialog(null,"\nCONTACTOS REGISTRADOS" );
+		if (agenda.isEmpty()) {
+	JOptionPane.showMessageDialog(null,"No hay Productos registrados.");
+	}else {			
+		for(Contactos cont:agenda) {
+		JOptionPane.showMessageDialog(null,"\nNombre: "+cont.getNombre() +
+				                            "\nTelefono: " +cont.getTelefono()+
+				                            "\nE-mail: "+cont.getEmail()+"\n","Lista de Contactos",JOptionPane.INFORMATION_MESSAGE);
+		}
+		
+}	
+	}
+	
+	private static void buscar() {
+		
+	}
+	}
+	
