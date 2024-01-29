@@ -1,0 +1,283 @@
+import java.text.ParseException;
+import java.time.LocalDate;
+
+
+public class Empleado1 {
+	private String nombre;
+	private int sueldo;
+	private LocalDate fechaContrato;
+
+
+public Empleado1() throws ParseException {
+	
+	nombre = "Francisco";
+	sueldo = 3000;
+	/*SimpleDateFormat d1 = new SimpleDateFormat("dd-MM-yy");*/
+	fechaContrato = LocalDate.of(2022,1,1);
+		
+}
+
+public Empleado1(String nombre,int sueldo,LocalDate fechaContrato) {
+	this.setNombre(nombre);
+	this.setSueldo(sueldo);
+	this.setFechaContrato(fechaContrato);
+	
+}
+
+public String getNombre() {
+	return nombre;
+}
+
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+
+public int getSueldo() {
+	return sueldo;
+}
+
+public void setSueldo(int sueldo) {
+	this.sueldo = sueldo;
+}
+
+public LocalDate getFechaContrato() {
+	return fechaContrato;
+}
+
+public void setFechaContrato(LocalDate fechaContrato) {
+	this.fechaContrato = fechaContrato;
+}
+
+public void imprimir() {
+	
+System.out.println("\n        DATOS DEL EMPLEADO 2\n");
+	
+	System.out.println("Nombre: "+nombre+
+	"\nSuedo inicial: "+sueldo+
+	"\nFecha de contrato: "+fechaContrato);	
+	
+	
+}
+
+}
+
+import java.text.ParseException;
+import java.time.LocalDate;
+
+public class Empleado2 {
+	private String nombre;
+	private int sueldo;
+	private LocalDate fechaContrato;
+	private double sueldoN;
+
+
+public Empleado2() throws ParseException {
+	
+	nombre = "Matias";
+	sueldo = 10000;
+	/*SimpleDateFormat d1 = new SimpleDateFormat("dd-MM-yy");*/
+	fechaContrato = LocalDate.of(2018,8,4);
+	sueldoN = sueldo*1.1;	
+}
+
+public Empleado2(String nombre,int sueldo,LocalDate fechaContrato,double sueldoN) {
+	this.setNombre(nombre);
+	this.setSueldo(sueldo);
+	this.setFechaContrato(fechaContrato);
+	this.subeSueldo(sueldoN);
+}
+
+public String getNombre() {
+	return nombre;
+}
+
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+
+public int getSueldo() {
+	return sueldo;
+}
+
+public void setSueldo(int sueldo) {
+	this.sueldo = sueldo;
+}
+
+public LocalDate getFechaContrato() {
+	return fechaContrato;
+}
+
+public void setFechaContrato(LocalDate fechaContrato) {
+	this.fechaContrato = fechaContrato;
+}
+
+public double dameSueldoN() {
+	return sueldoN;
+}
+
+public void subeSueldo(double sueldoN) {
+	this.sueldoN = sueldo;
+	
+}
+
+
+
+public void imprimir2() {
+	
+	System.out.println("\n        DATOS DEL EMPLEADO 2\n");
+	
+	System.out.println("Nombre: "+nombre+
+	"\nSuedo inicial: "+sueldo+
+	"\nNuevo sueldo: "+sueldoN+
+	"\nFecha de contrato: "+fechaContrato);
+	
+}
+
+}
+import java.text.ParseException;
+import java.time.LocalDate;
+
+public class Empleado3 {
+	private String nombre;
+	private int sueldo;
+	private LocalDate fechaContrato;
+	
+
+
+public Empleado3() throws ParseException {
+	
+	nombre = "Alejandra";
+	sueldo =5000;
+	/*SimpleDateFormat d1 = new SimpleDateFormat("dd-MM-yy");*/
+	fechaContrato = LocalDate.of(2021,1,1);
+}
+
+public Empleado3(String nombre,int sueldo,LocalDate fechaContrato) {
+	this.setNombre(nombre);
+	this.setSueldo(sueldo);
+	this.setFechaContrato3(fechaContrato);
+}
+
+public String getNombre3() {
+	return nombre;
+}
+
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+
+public int getSueldo() {
+	return sueldo;
+}
+
+public void setSueldo(int sueldo) {
+	this.sueldo = sueldo;
+}
+
+public LocalDate dameFechaContrato3() {
+	return fechaContrato;
+}
+
+public void setFechaContrato3(LocalDate fechaContrato) {
+	this.fechaContrato = fechaContrato;
+}
+
+public void imprimir3() {
+	
+	System.out.println("\n        DATOS DEL EMPLEADO 3\n");
+	
+	System.out.println("Nombre: "+nombre+
+	"\nSuedo inicial: "+sueldo+
+	"\nFecha de contrato: "+fechaContrato);
+	
+}
+
+}
+import java.text.ParseException;
+import java.time.LocalDate;
+
+public class Empleado4 {
+	private String nombre;
+	private int sueldo;
+	private LocalDate fechaContrato;
+	
+
+
+public Empleado4() throws ParseException {
+	
+	nombre = "Max";
+	sueldo =5000;
+	/*SimpleDateFormat d1 = new SimpleDateFormat("dd-MM-yy");*/
+	fechaContrato = LocalDate.of(2021,12,23);
+		
+}
+
+public Empleado4(String nombre,int sueldo,LocalDate fechaContrato) {
+	this.setNombre(nombre);
+	this.setSueldo(sueldo);
+	this.setFechaContrato4(fechaContrato);
+	
+}
+
+public String getNombre4() {
+	return nombre;
+}
+
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+
+public int getSueldo() {
+	return sueldo;
+}
+
+public void setSueldo(int sueldo) {
+	this.sueldo = sueldo;
+}
+
+public LocalDate dameFechaContrato4() {
+	return fechaContrato;
+}
+
+public void setFechaContrato4(LocalDate fechaContrato) {
+	this.fechaContrato = fechaContrato;
+}
+
+
+public void imprimir4() {
+	
+	System.out.println("\n        DATOS DEL EMPLEADO 4\n");
+	
+	System.out.println("Nombre: "+nombre+
+	"\nSuedo inicial: "+sueldo+
+	"\nFecha de contrato: "+fechaContrato);
+	
+}
+
+}
+import java.text.ParseException;
+
+public class Uso_Empleado1 {
+
+	public static void main(String[] args) throws ParseException {
+		
+		Empleado1 emp1=new Empleado1();
+		emp1.imprimir();
+		
+		Empleado2 emp2=new Empleado2();
+		emp2.imprimir2();
+		
+		Empleado3 emp3=new Empleado3();
+		emp3.imprimir3();
+		
+		Empleado4 emp4=new Empleado4();
+		emp4.imprimir4();
+		
+				
+		if (emp3.dameFechaContrato3().isAfter(emp4.dameFechaContrato4())) {
+			System.out.println("\nEl empleado "+ emp4.getNombre4()+" ingreso antes que el empleado "+emp3.getNombre3()+".");
+			}else{
+			System.out.println("\nEl empleado "+ emp3.getNombre3()+" ingreso antes que el empleado "+emp4.getNombre4()+".");
+		}
+		}
+	}
