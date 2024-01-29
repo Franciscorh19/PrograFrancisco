@@ -104,7 +104,19 @@ public class Uso_Contactos {
 	}
 	
 	private static void buscar() {
-		
+		String nombre=JOptionPane.showInputDialog(null,"\nIngrese el nombre del contacto: " );
+		boolean encontrado = false;
+
+        for (Contactos cont:agenda) {
+          
+			if (nombre.equals(cont.getNombre())) {
+				JOptionPane.showMessageDialog(null,cont.getNombre() + "\nTelefono:" + cont.getTelefono(),"\nCONTACTO ENCONTRADO",JOptionPane.INFORMATION_MESSAGE);
+                encontrado = true;
+            }
+        }
+        if (!encontrado) {
+            System.out.println("Contacto inexistente");
+        }
 	}
 	}
 	
