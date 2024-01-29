@@ -68,3 +68,76 @@ public class ProductoInv {
 						return false;
 				}	 			
 }
+import java.util.ArrayList;
+
+
+import javax.swing.JOptionPane;
+
+public class Uso_ProductoInv {
+	
+	private static ArrayList<ProductoInv> listaproductos = new ArrayList<ProductoInv>();
+	
+	public static void main(String[] args) {
+		
+					
+			int opcion;
+			do {
+				String opciones= JOptionPane.showInputDialog(null,"\n \t                   MENU TIENDA" + 
+			    "\n\t                  ----------------------\n" +
+				"\n [1] -- Registrar Producto"+
+				"\n [2] -- Imprimir Lista Productos"+
+				"\n [3] -- SALIR"+"\nOpcion: ");
+				
+				
+				opcion = Integer.parseInt(opciones);
+				
+				switch(opcion) {
+				case 1:
+					registrar();
+					break;
+				case 2:
+					imprimir();
+					break;
+				case 3:
+					JOptionPane.showMessageDialog(null,"\n\t\tFIN DE PROGRAMA");
+					break;
+				default:
+					JOptionPane.showMessageDialog(null,"\nOpcion equivocada");
+				}				
+				
+			} while (opcion != 3);
+			listaproductos.add(registrar());
+	}
+			
+			private static ProductoInv registrar() {
+			
+			String nombre = JOptionPane.showInputDialog(null,"\nNUEVO PRODUCTO" + "\nNombre: ");
+		    String precioS = JOptionPane.showInputDialog(null,"Precio(€): ");
+			double precio = Double.parseDouble(precioS);
+			String stockS = JOptionPane.showInputDialog(null,"Stock: ");
+			int stock = Integer.parseInt(stockS);
+			
+				
+				//Ya tenemos producto con un ID único
+				
+		   JOptionPane.showMessageDialog(null,"Nuevo Producto registrado...");
+		return new ProductoInv(nombre, precio, stock);
+			
+			
+		}
+		
+		private static void imprimir() {
+							
+			
+	    JOptionPane.showMessageDialog(null,"\nPRODUCTOS REGISTRADOS" );
+			if (ProductoInv.isEmpty())
+		JOptionPane.showMessageDialog(null,"No hay Productos registrados.");
+			else
+				for (ProductoInv prd: listaproductos) {
+	    JOptionPane.showMessageDialog(null,"\n*********************************"
+	    		+listaproductos+"*********************************\n");
+	    
+		}
+			
+	}
+}
