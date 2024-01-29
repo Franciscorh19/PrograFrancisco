@@ -75,9 +75,7 @@ public class Uso_ListaEmpleados {
 	
 	public static void main(String[] args) {
 	
-	/*	ListaEmpleados E1 = );
-		ListaEmpleados E2 = ;
-		ListaEmpleados E3 = new ListaEmpleados("Matias", 5000, 2018);*/
+
 		Uso_ListaEmpleados le = new Uso_ListaEmpleados();
 		
 		System.out.println("/n      Lista de Empleados\n");
