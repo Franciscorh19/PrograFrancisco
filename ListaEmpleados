@@ -1,0 +1,88 @@
+import java.text.ParseException;
+
+
+public class ListaEmpleados {
+	private String nombre;
+	private double sueldo;
+	private int fechaContrato;
+
+
+public ListaEmpleados() throws ParseException {
+	
+	if(fechaContrato<2021) 
+		sueldo=sueldo*1.05;
+	
+}
+
+public ListaEmpleados(String nombre,double sueldo,int fechaContrato) {
+	this.setNombre(nombre);
+	this.setSueldo(sueldo);
+	this.setFechaContrato(fechaContrato);	
+}
+
+public String getNombre() {
+	return nombre;
+}
+
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+
+public double getSueldo() {	
+	return sueldo;
+}
+
+public void setSueldo(double sueldo) {
+	this.sueldo=sueldo;	
+}
+
+public int getFechaContrato() {
+	return fechaContrato;
+}
+
+public void setFechaContrato(int fechaContrato) {
+	this.fechaContrato = fechaContrato;
+}
+
+public void imprimirlista() {
+	if(fechaContrato<2021) {	
+System.out.println("\nNombre: "+nombre+
+	"\nSuedo inicial: "+sueldo*1.05+
+	"\nFecha de contrato: "+fechaContrato);	
+	}else{
+System.out.println("\nNombre: "+nombre+
+	"\nSuedo inicial: "+sueldo+
+	"\nFecha de contrato: "+fechaContrato);		
+	}
+}	
+}
+import java.util.ArrayList;
+
+public class Uso_ListaEmpleados {
+
+	private ArrayList<ListaEmpleados> planilla;	
+	Uso_ListaEmpleados(){
+		planilla = new ArrayList<ListaEmpleados>(3);
+		planilla.add(new ListaEmpleados("Francisco", 5000, 2021));
+		planilla.add(new ListaEmpleados("Alejandra", 5000, 2021));
+		planilla.add(new ListaEmpleados("Matias", 5000, 2018));
+		
+	}
+	public void imprimirlista() {
+        for (ListaEmpleados lista : planilla)
+         lista.imprimirlista();
+    } 
+	
+	public static void main(String[] args) {
+	
+	/*	ListaEmpleados E1 = );
+		ListaEmpleados E2 = ;
+		ListaEmpleados E3 = new ListaEmpleados("Matias", 5000, 2018);*/
+		Uso_ListaEmpleados le = new Uso_ListaEmpleados();
+		
+		System.out.println("/n      Lista de Empleados\n");
+		le.imprimirlista();
+		
+		}
+		
+	}
