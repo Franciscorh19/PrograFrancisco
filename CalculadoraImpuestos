@@ -1,0 +1,88 @@
+
+
+import java.awt.HeadlessException;
+
+import javax.swing.JOptionPane;
+
+public class Uso_ImpuestosCal {
+	static String nombre;
+	static double precio ;
+	static double impuesto;
+	static double total;
+	public static void main(String[] args) throws HeadlessException {
+		ImpuestosCal Imp= new ImpuestosCal();
+		nombre = JOptionPane.showInputDialog(null,"\nINGRESE LOS DATOS" + "\nProducto: ");
+		String precioS = JOptionPane.showInputDialog(null,"Precio(€): ");
+		precio = Double.parseDouble(precioS);
+		total=precio-(1-Imp.getImpuesto());
+				
+			
+
+		
+		 
+		JOptionPane.showMessageDialog(null,"Producto: " + nombre+
+				"\nPrecio: " + precio+ 
+				"\nIVA(21%): " + Imp.getImpuesto()*precio +
+				"\nTotal: " + total);
+	
+	
+
+		/*String nombre = JOptionPane.showInputDialog(null,"\nNUEVO CONTACTO" + "\nProducto: ");
+		String precioS = JOptionPane.showInputDialog(null,"Precio(€): ");
+		double precio = Double.parseDouble(precioS);
+		
+		
+		
+		
+		JOptionPane.showMessageDialog(null,"\nRESUMEN\n" );
+		JOptionPane.showMessageDialog(null,
+				"\nProducto: "+ imp.getNombre +
+                "\nPrecio: " + iva.)+ "€"+
+                "\nIVA(21%): "+cont.getEmail()+
+                "\n","VOUCHER DE COMPRA",JOptionPane.INFORMATION_MESSAGE);*/
+	}} 
+
+
+
+import java.awt.HeadlessException;
+
+import javax.swing.JOptionPane;
+
+public class Uso_ImpuestosCal {
+	static String nombre;
+	static double precio ;
+	static double impuesto;
+	static double total;
+	public static void main(String[] args) throws HeadlessException {
+		ImpuestosCal Imp= new ImpuestosCal();
+		nombre = JOptionPane.showInputDialog(null,"\nINGRESE LOS DATOS" + "\nProducto: ");
+		String precioS = JOptionPane.showInputDialog(null,"Precio(€): ");
+		precio = Double.parseDouble(precioS);
+		total=precio-(1-Imp.getImpuesto());
+				
+			
+
+		
+		 
+		JOptionPane.showMessageDialog(null,"Producto: " + nombre+
+				"\nPrecio: " + precio+ 
+				"\nIVA(21%): " + Imp.getImpuesto()*precio +
+				"\nTotal: " + total);
+	
+	
+
+		/*String nombre = JOptionPane.showInputDialog(null,"\nNUEVO CONTACTO" + "\nProducto: ");
+		String precioS = JOptionPane.showInputDialog(null,"Precio(€): ");
+		double precio = Double.parseDouble(precioS);
+		
+		
+		
+		
+		JOptionPane.showMessageDialog(null,"\nRESUMEN\n" );
+		JOptionPane.showMessageDialog(null,
+				"\nProducto: "+ imp.getNombre +
+                "\nPrecio: " + iva.)+ "€"+
+                "\nIVA(21%): "+cont.getEmail()+
+                "\n","VOUCHER DE COMPRA",JOptionPane.INFORMATION_MESSAGE);*/
+	}} 
+
