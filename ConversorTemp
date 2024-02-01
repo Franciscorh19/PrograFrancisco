@@ -1,0 +1,54 @@
+public class ConvTemperatura {
+private double gradosC;
+private double gradosF;
+private final double k=1.8;
+
+public ConvTemperatura () {
+	
+}
+
+public ConvTemperatura(double gradosC, double gradosF) {
+	this.gradosC=gradosC;
+	this.gradosF=gradosF;
+}
+
+public double getGradosC() {
+	return gradosC;
+}
+public void setGradosC(double gradosC) {
+	this.gradosC = gradosC;
+}
+public double getGradosF() {
+	return gradosF;
+}
+public void setGradosF(double gradosF) {
+	this.gradosF = gradosF;
+}
+public double getK() {
+	return k;
+}
+
+}
+
+import javax.swing.JOptionPane;
+
+public class Uso_ConvTemperatura {
+
+	static double gradosC;
+	static double gradosF;
+	
+	public static void main(String[] args) {
+		
+		ConvTemperatura calculadora = new ConvTemperatura();
+		
+		String gradosCS = JOptionPane.showInputDialog(null, "Ingrese la temperatura en Celsius: ","CONVERSIÓN °C -> °F",JOptionPane.INFORMATION_MESSAGE);
+		gradosC = Double.parseDouble(gradosCS);
+		gradosF= gradosC*calculadora.getK();
+
+		
+		JOptionPane.showMessageDialog(null,"Temperatura (°C): " + gradosC+
+				"\nTemperatura (°F): " + gradosF
+				,"CONVERSIÓN °C -> °F", JOptionPane.INFORMATION_MESSAGE);
+	}
+
+}
