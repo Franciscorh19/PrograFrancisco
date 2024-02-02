@@ -1,0 +1,53 @@
+public class DeterminadorBis {
+private int anho;
+private final int a1=4;
+private final int a2=100;
+private final int a3=400;
+
+public DeterminadorBis() {
+	
+}
+public DeterminadorBis(int anho) {
+	this.anho=anho;
+}
+public int getAnho() {
+	return anho;
+}
+public void setAnho(int anho) {
+	this.anho = anho;
+}
+public int getA1() {
+	return a1;
+}
+public int getA2() {
+	return a2;
+}
+public int getA3() {
+	return a3;
+}
+}
+
+import javax.swing.JOptionPane;
+
+public class Uso_DeterminadorBis {
+static int anho;
+	public static void main(String[] args) {
+		
+		DeterminadorBis bisiesto = new DeterminadorBis();
+		
+		String anhoS = JOptionPane.showInputDialog(null, "Ingrese el año: ","DETERMINADOR DE AÑO BISIESTO",JOptionPane.INFORMATION_MESSAGE);
+		anho = Integer.parseInt(anhoS);
+	
+		
+				
+		if(anho%bisiesto.getA1()==0 || (anho%bisiesto.getA2()==0 && anho%bisiesto.getA3()==0)) {
+			JOptionPane.showMessageDialog(null,"El año "+ anho +" es bisiesto."
+					,"DETERMINADOR DE AÑO BISIESTO", JOptionPane.INFORMATION_MESSAGE);
+		}else{
+			JOptionPane.showMessageDialog(null,"El año "+ anho +" no es bisiesto."
+					,"DETERMINADOR DE AÑO BISIESTO", JOptionPane.INFORMATION_MESSAGE);
+		}
+
+	}
+
+}
