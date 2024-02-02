@@ -1,0 +1,89 @@
+public class CalcuDescuento {
+private String nombre;
+private int cantidad;
+private double preciou;
+private double preciototal;
+private double descuento;
+private final double porcentajeD = 0.1;
+
+public CalcuDescuento () {	
+}
+public CalcuDescuento (String nombre, int cantidad, double preciou, double preciototal, double descuento) {
+	this.cantidad=cantidad;
+	this.descuento=descuento;
+	this.nombre=nombre;
+	this.preciototal=preciototal;
+	this.preciou=preciou;	
+}
+public String getNombre() {
+	return nombre;
+}
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+public int getCantidad() {
+	return cantidad;
+}
+public void setCantidad(int cantidad) {
+	this.cantidad = cantidad;
+}
+public double getPreciou() {
+	return preciou;
+}
+public void setPreciou(double preciou) {
+	this.preciou = preciou;
+}
+public double getPreciototal() {
+	return preciototal;
+}
+public void setPreciototal(double preciototal) {
+	this.preciototal = preciototal;
+}
+public double getDescuento() {
+	return descuento;
+}
+public void setDescuento(double descuento) {
+	this.descuento = descuento;
+}
+public double getPorcentajeD() {
+	return porcentajeD;
+}
+}
+
+import javax.swing.JOptionPane;
+
+public class Uso_CalcuDescuento {
+	static String nombre;
+	static int cantidad;
+	static double preciou;
+	static double descuento;
+	static double preciototal;
+	public static void main(String[] args) {
+		CalcuDescuento descuentocompra = new CalcuDescuento();
+		
+		nombre = JOptionPane.showInputDialog(null, "Nombre del producto: ","INFORMACIÓN DE COMPRA",JOptionPane.INFORMATION_MESSAGE);
+		String preciouS = JOptionPane.showInputDialog(null, "Precio unitario: ","INFORMACIÓN DE COMPRA",JOptionPane.INFORMATION_MESSAGE);
+		preciou = Integer.parseInt(preciouS);
+		String cantidadS = JOptionPane.showInputDialog(null, "Cantidad de unidades: ","INFORMACIÓN DE COMPRA",JOptionPane.INFORMATION_MESSAGE);
+		cantidad = Integer.parseInt(cantidadS);
+		
+		descuento = descuentocompra.getPorcentajeD()*preciou*cantidad;
+		preciototal = preciou*cantidad;
+		
+		if(cantidad <= 5) {
+			JOptionPane.showMessageDialog(null,"Producto: "+nombre.toUpperCase() +
+					"\nPrecio unitario (€): "+ preciou +
+					"\nUnidades: "+ cantidad +
+					"\nTotal a pagar (€): "+preciototal		
+					,"DETALLE DE LA COMPRA", JOptionPane.INFORMATION_MESSAGE);
+		}else{
+			JOptionPane.showMessageDialog(null,"Producto: "+nombre.toUpperCase() +
+					"\nPrecio unitario (€): "+ preciou +
+					"\nUnidades: "+ cantidad +
+					"\nDescuento aplicado (€): -"+descuento+
+					"\nTotal a pagar (€): "+(preciototal-descuento)		
+					,"DETALLE DE LA COMPRA", JOptionPane.INFORMATION_MESSAGE);
+		}
+	}
+
+}
