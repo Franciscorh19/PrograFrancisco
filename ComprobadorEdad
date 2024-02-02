@@ -1,0 +1,54 @@
+public class edadVotar {
+private String nombre;
+private int edad;
+private final int minima=18;
+
+public edadVotar() {
+	
+}
+public edadVotar(String nombre, int edad) {
+	this.edad=edad;
+	this.nombre=nombre; 
+}
+public int getEdad() {
+	return edad;
+}
+public void setEdad(int edad) {
+	this.edad = edad;
+}
+public String getNombre() {
+	return nombre;
+}
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+public int getMinima() {
+	return minima;
+}
+}
+
+import javax.swing.JOptionPane;
+
+public class Uso_edadVotar {
+static String nombre;
+static int edad;
+	public static void main(String[] args) {
+		
+		edadVotar edadminima = new edadVotar();
+		
+		nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre: ","COMPROBADOR DE EDAD PARA VOTAR",JOptionPane.INFORMATION_MESSAGE);
+		String edadS = JOptionPane.showInputDialog(null, "Ingrese la edad: ","COMPROBADOR DE EDAD PARA VOTAR",JOptionPane.INFORMATION_MESSAGE);
+		edad = Integer.parseInt(edadS);
+		
+		
+				
+		if(edad < edadminima.getMinima()) {
+			JOptionPane.showMessageDialog(null,nombre.toUpperCase() +" NO ES APTO PARA VOTAR."
+					,"COMPROBADOR DE EDAD PARA VOTAR", JOptionPane.INFORMATION_MESSAGE);
+		}else{
+			JOptionPane.showMessageDialog(null,nombre.toUpperCase() +" ES APTO PARA VOTAR."
+					,"COMPROBADOR DE EDAD PARA VOTAR", JOptionPane.INFORMATION_MESSAGE);
+		}
+		
+
+	}
