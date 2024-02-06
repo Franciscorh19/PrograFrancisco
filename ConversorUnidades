@@ -1,0 +1,66 @@
+
+import java.util.Scanner;
+
+public class ConversorUnidades {
+
+	public static void main(String[] args) {
+			
+		System.out.println("1. Km - milla");
+        System.out.println("2. °C - °F");
+        System.out.println("3. $ - €");
+        System.out.println("4. Kg - Lb");
+        System.out.println("Selecciona una conversión:");
+        try (Scanner sc = new Scanner(System.in)) {
+			int opcion = sc.nextInt();
+			
+			double resultado = 0;
+			double num;
+			switch (opcion) {
+			
+			    case 1:            	
+					System.out.println("Ingrese Km: ");
+					num = sc.nextDouble();
+			        resultado = kmmilla(num);
+			        System.out.println(num+ " Km = " + resultado+" millas.");
+			        break;
+			    case 2:
+					System.out.println("Ingrese °C: ");
+					num = sc.nextDouble();
+			        resultado = cf(num);
+			        System.out.println(num+ " °C = " + resultado+"° F.");
+			        break;
+			    case 3:
+					System.out.println("Ingrese $: ");
+					num = sc.nextDouble();
+			        resultado = useu(num);
+			        System.out.println(num+ " $ = " + resultado+" €.");
+			        break;
+			    case 4:
+					System.out.println("Ingrese Kg: ");
+					num = sc.nextDouble();
+			        resultado = kglb(num);
+			        System.out.println(num+ " Kg = " + resultado+" Lb.");
+			        break;
+			    default:
+			        System.out.println("Opción inválida.");
+				return;
+				
+			}
+		}         
+		}
+
+public static double kmmilla (double a) {
+	return Math.round(a*0.621371) ;
+}
+public static double cf (double a) {
+	return Math.round(a*9/5 + 32);
+}
+public static double useu (double a) {
+	return Math.round(a*0.93);
+}
+public static double kglb (double a) {
+	return Math.round(a*2.20462);
+}
+
+
+}
