@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Validador {
+
+public static void main(String[] args) {
+
+        
+Scanner sc = new Scanner(System.in);
+
+
+System.out.println("Ingrese la talla de calzado: ");
+String talla = sc.nextLine();
+if (esNumero(talla)) {
+    System.out.println("Talla ingresada.");
+} else {
+    System.out.println(talla + " es un valor incorrecto.");
+}
+
+/*
+System.out.print("Ingrese un número para validar si está en un rango específico: ");
+double numeroParaValidar = sc.nextDouble();*/
+double rangoInicio = 35;
+double rangoFin = 50;
+if (estaEnRango(talla, rangoInicio, rangoFin)) {
+    System.out.println("Hay unidades disponibles.");
+} else {
+    System.out.println("Error, ingrese una talla en el rango [35 - 50].");
+}
+
+sc.close();
+} 
+
+
+public static boolean esNumero(String talla) {
+        try {
+            Double.parseDouble(talla);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+public static boolean estaEnRango(String talla, double rangoInicio, double rangoFin) {
+	
+        return Double.parseDouble(talla) >= rangoInicio && Double.parseDouble(talla) <= rangoFin;
+    }
+
+}
