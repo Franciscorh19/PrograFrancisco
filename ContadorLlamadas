@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class ContadorLlamadas {
+	
+private static int contador = 0;
+
+public void sumar() {
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+        
+        do {
+            System.out.println("Menú de opciones:");
+            System.out.println("1. Ingresar dos valores para sumar");
+            System.out.println("2. Salir del programa");
+            System.out.print("Seleccione una opción: ");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingrese el primer número: ");
+                    int a = sc.nextInt();
+
+                    System.out.print("Ingrese el segundo número: ");
+                    int b = sc.nextInt();
+
+                    // Incrementa el contador cada vez que se llama al método de suma
+                    contador++;
+
+                    int resultado = a + b;
+                    System.out.println("Resultado de la suma: " + resultado);
+                    break;
+
+                case 2:
+                    System.out.println("Saliendo del programa.");
+                    break;
+
+                default:
+                    System.out.println("Opción no válida.");
+            }
+
+        } while (opcion != 2);
+        sc.close();
+        
+        
+}  
+
+public static int getContador() {
+	return contador;
+}
+
+        
+public static void main(String[] args) {
+		
+		 // Crear una instancia de la clase
+		ContadorLlamadas cont = new ContadorLlamadas();
+
+        // Llamar al método de suma desde consola hasta que el usuario decida salir
+		cont.sumar();
+
+        // Obtener y mostrar el contador de llamadas al método de suma
+        System.out.println("El método Sumar se ha llamado " + ContadorLlamadas.getContador() + " veces.");
+
+}
+
+}
+
