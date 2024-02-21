@@ -1,0 +1,69 @@
+package SOBRECARGAS;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Rectangulo {
+	 private double ancho;
+	    private double altura;
+
+	    // Constructor con ancho y altura proporcionados en centímetros
+	    public Rectangulo(double ancho, double altura) {
+	        this.ancho = ancho;
+	        this.altura = altura;
+	    }
+
+	    // Constructor sin parámetros
+	    public Rectangulo() {
+	        ingresarDimensiones();
+	    }
+
+	    // Método para ingresar las dimensiones del rectángulo mediante un panel
+	    private void ingresarDimensiones() {
+	        JTextField anchoField = new JTextField();
+	        JTextField alturaField = new JTextField();
+
+	        JPanel panel = new JPanel();
+	        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+	        panel.add(new JLabel("Ancho (cm):"));
+	        panel.add(anchoField);
+	        panel.add(new JLabel("Altura (cm):"));
+	        panel.add(alturaField);
+
+	        int result = JOptionPane.showConfirmDialog(null, panel, "Ingrese las dimensiones del rectángulo",
+	                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+
+	        if (result == JOptionPane.OK_OPTION) {
+	            try {
+	                this.ancho = Double.parseDouble(anchoField.getText());
+	                this.altura = Double.parseDouble(alturaField.getText());
+	            } catch (NumberFormatException e) {
+	                JOptionPane.showMessageDialog(null, "Por favor, ingrese valores numéricos válidos.");
+	                ingresarDimensiones(); // Vuelve a solicitar las dimensiones si no son válidas
+	            }
+	        } else {
+	            System.exit(0);
+	        }
+	    }
+
+	    // Método para obtener la representación en texto del rectángulo
+	    public String obtenerInformacion() {
+	        return "Ancho: " + ancho + " cm, Altura: " + altura + " cm";
+	    }
+}
+
+import javax.swing.JOptionPane;
+
+public class RectanguloMain {
+
+	public static void main(String[] args) {
+		 // Instanciar objetos de Rectangulo con diferentes combinaciones de parámetros en los constructores
+        Rectangulo rectangulo = new Rectangulo();
+
+        // Mostrar la información del rectángulo ingresado en una ventana emergente
+        JOptionPane.showMessageDialog(null, rectangulo.obtenerInformacion(), "Información del Rectángulo", JOptionPane.INFORMATION_MESSAGE);
+    }
+}
