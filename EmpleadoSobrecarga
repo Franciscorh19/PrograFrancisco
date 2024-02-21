@@ -1,0 +1,85 @@
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Empleado {
+	 private String nombre;
+	    private double salario;
+	    private String departamento;
+
+	    // Constructor con todos los parámetros ingresados desde un panel
+	    public Empleado(String nombre, double salario, String departamento) {
+	        this.nombre = nombre;
+	        this.salario = salario;
+	        this.departamento = departamento;
+	    }
+
+	    // Constructor sin parámetros
+	    public Empleado() {
+	        // Pedir al usuario que ingrese los datos mediante un panel de entrada
+	        ingresarDatos();
+	    }
+
+	    // Método para ingresar los datos del empleado mediante un panel
+	    private void ingresarDatos() {
+	        // Crear un panel de entrada de datos utilizando JOptionPane
+	        JTextField nombreField = new JTextField();
+	        JTextField salarioField = new JTextField();
+	        JTextField departamentoField = new JTextField();
+
+	        JPanel panel = new JPanel();
+	        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+	        panel.add(new JLabel("Nombre:"));
+	        panel.add(nombreField);
+	        panel.add(new JLabel("Salario:"));
+	        panel.add(salarioField);
+	        panel.add(new JLabel("Departamento:"));
+	        panel.add(departamentoField);
+
+	        // Mostrar el panel y esperar a que el usuario ingrese los datos
+	        int result = JOptionPane.showConfirmDialog(null, panel, "Ingrese los datos del empleado",
+	                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+
+	        // Si el usuario presiona OK, asignar los valores ingresados a las variables miembro
+	        if (result == JOptionPane.OK_OPTION) {
+	            this.nombre = nombreField.getText();
+	            this.salario = Double.parseDouble(salarioField.getText());
+	            this.departamento = departamentoField.getText();
+	        } else {
+	            // Si el usuario cancela, salir del programa
+	            System.exit(0);
+	        }
+	    }
+
+	    @Override
+	    public String toString() {
+	        return "Empleado: " + nombre + ", Salario: " + salario + ", Departamento: " + departamento;
+	    }
+}
+import javax.swing.JOptionPane;
+
+public class EmpleadoMain {
+
+	public static void main(String[] args) {
+		 // Variable para controlar la salida del programa
+        boolean salir = false;
+
+        // Bucle para permitir ingresar múltiples empleados
+        while (!salir) {
+            // Crear una instancia de Empleado
+            Empleado empleado = new Empleado();
+
+            // Imprimir la información del empleado creado
+            System.out.println(empleado);
+
+            // Preguntar al usuario si desea continuar ingresando empleados
+            int opcion = JOptionPane.showConfirmDialog(null, "¿Desea ingresar otro empleado?",
+                    "Continuar", JOptionPane.YES_NO_OPTION);
+            if (opcion != JOptionPane.YES_OPTION) {
+                salir = true;
+            }
+        }
+    }
+
